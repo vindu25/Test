@@ -1,0 +1,128 @@
+body {
+    margin: 0;
+    padding: 0;
+
+}
+
+.header {
+    height: 100vh;
+    background-image: url(img4.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-inner {
+    position: fixed !important;
+}
+
+.carousel-item {
+    height: 100vh;
+    min-height: 300px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+/*.navbar-nav a{
+    font-family: poppins;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+}*/
+.navbar {
+    padding-top: 0;
+}
+
+.navbar .container {
+    background: #ffffffe3;
+    width: auto;
+    border-radius: 0 0 0.1em 0.1em;
+}
+
+.navbar-brand {
+    color: white;
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.navbar-nav {
+    text-align: center;
+}
+
+.navbar-toggler {
+    padding: 1px 5px;
+    font-size: 18px;
+    line-height: 0.3;
+    background: #fff;
+}
+
+#brand {
+    position: fixed;
+    top: 5em;
+    left: 33%;
+    background: #ffffffcf;
+    width: 35%;
+    border-radius: 0.5em;
+}
+
+#brand-name {
+    padding: 0.5em 0.5em 0.5em 0.5em;
+    text-align: center;
+    font-size: x-large;
+}
+
+#search-bar {
+    padding: 1em 1em 1em 1em;
+}
+
+#brand input {
+    width: 90%;
+}
+
+#recipes {
+    display: none;
+    width: 90%;
+    background: #ffffffa6;
+    padding: 10px;
+    position: fixed;
+    top: 12em;
+    border-radius: 0.5em;
+    left: 5%;
+    height: 70%;
+    overflow: scroll;
+}
+
+.recipe-card {
+    float: left;
+    padding: 1em;
+    margin: 0.2em;
+}
+
+#contact-us {
+    width: 70%;
+    background: #ffffffd9;
+    padding: 1em 5em 2em 5em;
+    position: absolute;
+    top: 10%;
+    border-radius: 0.5em;
+    left: 15%;
+}
+
+.card-img-top {
+    width: 12em;
+    align-self: center;
+}
+
+footer {
+    position: fixed;
+    bottom: 2em;
+    background: #ffffffe0;
+    left: 45%;
+    border-radius: 0.5em;
+    padding: 0.2em 1em 0.2em 1em;
+}
