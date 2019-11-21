@@ -97,7 +97,26 @@ body {
     overflow: scroll;
 }
 
+#pics {
+    display: none;
+    width: 90%;
+    background: #ffffffa6;
+    padding: 10px;
+    position: fixed;
+    top: 12em;
+    border-radius: 0.5em;
+    left: 5%;
+    height: 70%;
+    overflow: scroll;
+}
+
 .recipe-card {
+    float: left;
+    padding: 1em;
+    margin: 0.2em;
+}
+
+.pic-card {
     float: left;
     padding: 1em;
     margin: 0.2em;
