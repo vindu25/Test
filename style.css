@@ -110,6 +110,19 @@ body {
     overflow: scroll;
 }
 
+#nutri-analysis {
+    display: none;
+    width: 90%;
+    background: #ffffff;
+    padding: 10px;
+    position: fixed;
+    top: 12em;
+    border-radius: 0.5em;
+    left: 5%;
+    height: auto;
+    overflow: scroll;
+}
+
 .recipe-card {
     float: left;
     padding: 1em;

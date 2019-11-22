@@ -40,8 +40,11 @@ function loadRecipes(result) {
 
 function getNutrientsAnalysis(data) {
   $.ajax({
-    url: `${host}/api/nutrition-details?app_id=${appId}&app_key=${apiKey}`,
-    data: data,
+    type: "POST",
+    url: `https://api.edamam.com/api/nutrition-details?app_id=47379841&app_key=d28718060b8adfd39783ead254df7f92`,//`${host}/api/nutrition-details?app_id=${appId}&app_key=${apiKey}`,
+    data: JSON.stringify(data),
+    dataType: 'json',
+    contentType: 'application/json',
     success: function (result) {
       console.log(result);
       loadAnalysis(result);
@@ -52,39 +55,37 @@ function getNutrientsAnalysis(data) {
 function loadAnalysis(result) {
 
   $('#nutri-analysis').empty();
+  let rowData = '';
+  let ingredients = result.ingredients;
+  ingredients.forEach(ingredient => {
+    let parsedData = ingredient.parsed[0];
+    rowData += `
+    <tr>
+      <th scope="row">${parsedData.quantity}</th>
+      <td>${parsedData.measure}</td>
+      <td>${parsedData.food}</td>
+      <td>${parsedData.weight}</td>
+    </tr>
+    `;
+  });
+
+
   $('#nutri-analysis').append(`
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Qty</th>
+          <th scope="col">Unit</th>
+          <th scope="col">Food</th>
+          <th scope="col">Weight</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td>Larry</td>
-          <td>the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        ${rowData}
       </tbody>
     </table>
   `);
-
+  $('#nutri-analysis').show();
 }
 
 // Pics
@@ -137,8 +138,8 @@ $(document).ready(function(){
     let data = $('#ingredients-input').val();
     console.log(data);
     if (data) {
-      console.log(data.split(","));
-      data = { ingr: data.split(",") };
+      data = { ingr: data.split(",")};
+      console.log(data);
       getNutrientsAnalysis(data);
     }
   });
